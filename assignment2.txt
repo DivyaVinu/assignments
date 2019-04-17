@@ -1,0 +1,21 @@
+class Sum:
+
+  #Function to add the inputs and check the presence ofresult in the list
+  def sum_of_inputs(num1,num2):
+    add = int(num1) + int(num2)
+    for x in list:
+      if x==add:
+        return True    
+    return False
+
+#List provided      
+list = [1,2,3,4,5,6,7,8,9,10]
+
+#Getting inputs from the user
+num1 = input("Enter first integer: ")
+num2 = input("Enter second integer: ")
+
+#Calling the function to add and check
+value = Sum.sum_of_inputs(num1,num2)
+
+print ("The result is",value)

@@ -1,0 +1,44 @@
+from pythonds.basic.stack import Stack
+
+class BalanceCheck:
+
+  string = input("Enter your string: ")
+
+  def check(string):
+    s = Stack()
+    balanced = True
+    index = 0
+    while index < len(string) and balanced:
+        symbol = string[index]
+        num=""
+         
+        if symbol == "(" or symbol == "{" or symbol == "[":
+            s.push(symbol)
+
+        elif symbol.isdigit() or symbol:
+          num +=symbol
+
+        else:
+            if s.isEmpty():
+                balanced = False
+            else:
+                s.pop()
+
+        index = index + 1
+
+    p = s.items
+
+    if balanced and s.isEmpty():
+        print ("The given string is already parenthesised")
+    else:
+      rev = p[::-1]
+      for i in rev:
+        if i=='(':
+          string=string+')'
+        elif i=='{':
+          string=string+'}'
+        elif i=='[':
+          string=string+']'
+      print ("The proper parenthesised string is", string)
+     
+BalanceCheck.check(BalanceCheck.string)
